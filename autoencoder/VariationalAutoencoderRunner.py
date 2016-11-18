@@ -6,8 +6,7 @@ from tensorflow.examples.tutorials.mnist import input_data
 
 from autoencoder.autoencoder_models.VariationalAutoencoder import VariationalAutoencoder
 
-mnist = input_data.read_data_sets('MNIST_data', one_hot = True)
-
+mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
 
 def min_max_scale(X_train, X_test):
@@ -29,9 +28,9 @@ training_epochs = 20
 batch_size = 128
 display_step = 1
 
-autoencoder = VariationalAutoencoder(n_input = 784,
-                                     n_hidden = 200,
-                                     optimizer = tf.train.AdamOptimizer(learning_rate = 0.001))
+autoencoder = VariationalAutoencoder(n_input=784,
+                                     n_hidden=200,
+                                     optimizer=tf.train.AdamOptimizer(learning_rate=0.001))
 
 for epoch in range(training_epochs):
     avg_cost = 0.
